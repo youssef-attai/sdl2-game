@@ -21,7 +21,7 @@ void Game::init(const char *_title, int _xPos, int _yPos, int _width, int _heigh
         isRunning = false;
         return;
     }
-    
+
     std::cout << "SDL subsystems initialized" << '\n';
 
 //        Create the window
@@ -33,7 +33,7 @@ void Game::init(const char *_title, int _xPos, int _yPos, int _width, int _heigh
             _height,
             (_fullscreen ? SDL_WINDOW_FULLSCREEN : 0)
     );
-    
+
 //    Check if the window is created successfully
     if (window) std::cout << "Window created" << '\n';
 
@@ -48,8 +48,21 @@ void Game::init(const char *_title, int _xPos, int _yPos, int _width, int _heigh
     isRunning = true;
 }
 
-void Game::handleEvents() {
-
+void Game::handleEvent() {
+//    Load the next event from the event queue into the variable event
+    SDL_Event event;
+    SDL_PollEvent(&event);
+    
+//    Check the type of the event
+    switch (event.type) {
+//        If it was a quit/exit event
+        case SDL_QUIT:
+//            Set game state to "not running"
+            isRunning = false;
+            break;
+        default:
+            break;
+    }
 }
 
 void Game::update() {
