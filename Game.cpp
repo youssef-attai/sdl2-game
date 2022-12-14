@@ -74,8 +74,8 @@ void Game::handleEvent() {
 }
 
 void Game::update() {
-    dstRect.w = (int)(215.0f / 4);
-    dstRect.h = (int)(296.0f / 4);
+    dstRect.w = (int) (215.0f / 4);
+    dstRect.h = (int) (296.0f / 4);
     dstRect.x++;
 }
 
