@@ -1,7 +1,8 @@
 #include "Game.h"
 
-//  The player texture;
+//  The player;
 SDL_Texture *playerTexture;
+SDL_Rect srcRect, dstRect;
 
 Game::Game() {
 
@@ -73,13 +74,15 @@ void Game::handleEvent() {
 }
 
 void Game::update() {
-
+    dstRect.w = (int)(215.0f / 4);
+    dstRect.h = (int)(296.0f / 4);
+    dstRect.x++;
 }
 
 void Game::render() {
     SDL_RenderClear(renderer);
 
-    SDL_RenderCopy(renderer, playerTexture, nullptr, nullptr);
+    SDL_RenderCopy(renderer, playerTexture, nullptr, &dstRect);
 
     SDL_RenderPresent(renderer);
 }
