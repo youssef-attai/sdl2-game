@@ -42,7 +42,13 @@ void Game::init(const char *_title, int _xPos, int _yPos, int _width, int _heigh
     renderer = SDL_CreateRenderer(window, -1, 0);
 
 //    Check if the renderer is created successfully
-    if (renderer) std::cout << "Renderer created" << '\n';
+    if (renderer) {
+        std::cout << "Renderer created" << '\n';
+
+//        Draw a white screen initially
+        SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+    }
+
 
 //    Set the game running state to "running"
     isRunning = true;
