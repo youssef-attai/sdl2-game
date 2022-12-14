@@ -1,10 +1,9 @@
 #include "Game.h"
-#include "TextureManager.h"
 #include "utils.h"
+#include "GameObject.h"
 
 //  The player;
-SDL_Texture *playerTexture;
-SDL_Rect srcRect, dstRect;
+GameObject *player;
 
 Game::Game() {
 
@@ -49,7 +48,7 @@ void Game::init(const char *_title, int _xPos, int _yPos, int _width, int _heigh
     isRunning = true;
 
 //    Create the player texture 
-    playerTexture = TextureManager::LoadTexture(asset("mario.png"), renderer);
+    player = new GameObject(asset("mario"), renderer, 0, 0, 32, 64);
 }
 
 void Game::handleEvent() {
@@ -70,16 +69,12 @@ void Game::handleEvent() {
 }
 
 void Game::update() {
-    dstRect.w = (int) (215.0f / 4);
-    dstRect.h = (int) (296.0f / 4);
-    dstRect.x++;
+    player->update();
 }
 
 void Game::render() {
     SDL_RenderClear(renderer);
-
-    SDL_RenderCopy(renderer, playerTexture, nullptr, &dstRect);
-
+    player->render();
     SDL_RenderPresent(renderer);
 }
 
@@ -87,7 +82,7 @@ void Game::clean() {
 //    Free all allocated memory, destroy all objects
     SDL_DestroyWindow(window);
     SDL_DestroyRenderer(renderer);
-    SDL_DestroyTexture(playerTexture);
+    player->destroy();
     SDL_Quit();
 
     std::cout << "Game cleaned" << '\n';
