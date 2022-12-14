@@ -8,8 +8,10 @@ int main(int argc, const char *argv[]) {
 
 //    Frames to render per second
     const int FPS = 60;
-    
+
 //    Time each frame should take before next frame is rendered
+//    1000/FPS means each frame should take not a whole second rendering
+//    but a part of the second so that the number of frames rendered per second is FPS
     const int frameDelay = 1000 / FPS;
 
     unsigned long frameStart;
@@ -23,14 +25,14 @@ int main(int argc, const char *argv[]) {
         game->render();
 
         frameTime = SDL_GetTicks() - frameStart;
-        
+
 //        If the frame took less time than it should
         if (frameTime < frameDelay)
 //            Delay the frame till it has taken the time it should
             SDL_Delay(frameDelay - frameTime);
     }
-    
+
     game->clean();
-    
+
     return 0;
 }
