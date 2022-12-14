@@ -52,7 +52,7 @@ void Game::handleEvent() {
 //    Load the next event from the event queue into the variable event
     SDL_Event event;
     SDL_PollEvent(&event);
-    
+
 //    Check the type of the event
     switch (event.type) {
 //        If it was a quit/exit event
@@ -70,7 +70,11 @@ void Game::update() {
 }
 
 void Game::render() {
+    SDL_RenderClear(renderer);
 
+    /* Here goes whatever we would like to render */
+
+    SDL_RenderPresent(renderer);
 }
 
 void Game::clean() {
