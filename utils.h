@@ -5,9 +5,11 @@
 
 inline const char *asset(const char *_filename) {
     const char *assetsPath = "../assets/";
-    char *filename = new char[std::strlen(assetsPath) + strlen(_filename) + 1];
+    const char *extension = ".png";
+    char *filename = new char[std::strlen(assetsPath) + strlen(_filename) + strlen(extension) + 1];
     strcpy(filename, assetsPath);
     strcat(filename, _filename);
+    strcat(filename, extension);
     return filename;
 }
 
