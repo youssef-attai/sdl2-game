@@ -8,7 +8,7 @@ Game::~Game() {
 
 }
 
-void Game::init(const char *_title, int _xPos, int _yPos, int _width, int _height, bool _fullscreen) {
+void Game::init(const char *_title, int _xPos, int _yPos, int _width, int _height) {
 //    Initialize all SDL subsystems
 
 //  If SDL subsystems did not initialize successfully
@@ -21,14 +21,7 @@ void Game::init(const char *_title, int _xPos, int _yPos, int _width, int _heigh
     std::cout << "SDL subsystems initialized" << '\n';
 
 //        Create the window
-    window = SDL_CreateWindow(
-            _title,
-            _xPos,
-            _yPos,
-            _width,
-            _height,
-            (_fullscreen ? SDL_WINDOW_FULLSCREEN : 0)
-    );
+    window = SDL_CreateWindow(_title, _xPos, _yPos, _width, _height, 0);
 
 //    Check if the window is created successfully
     if (window) std::cout << "Window created" << '\n';
