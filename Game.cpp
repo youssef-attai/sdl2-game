@@ -91,6 +91,6 @@ void Game::clean() {
     std::cout << "Game cleaned" << '\n';
 }
 
-bool Game::running() {
-    return false;
+bool Game::running() const {
+    return isRunning;
 }
