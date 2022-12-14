@@ -1,5 +1,8 @@
 #include "Game.h"
 
+//  The player texture;
+SDL_Texture *playerTexture;
+
 Game::Game() {
 
 }
@@ -41,6 +44,15 @@ void Game::init(const char *_title, int _xPos, int _yPos, int _width, int _heigh
 
 //    Set the game running state to "running"
     isRunning = true;
+
+//    Create a surface for the player
+    SDL_Surface *playerImage = IMG_Load("../assets/mario.png");
+
+//    Create the player texture from the surface with the player's PNG
+    playerTexture = SDL_CreateTextureFromSurface(renderer, playerImage);
+
+//    Delete the surface after use
+    SDL_FreeSurface(playerImage);
 }
 
 void Game::handleEvent() {
@@ -67,7 +79,7 @@ void Game::update() {
 void Game::render() {
     SDL_RenderClear(renderer);
 
-    /* Here goes whatever we would like to render */
+    SDL_RenderCopy(renderer, playerTexture, nullptr, nullptr);
 
     SDL_RenderPresent(renderer);
 }
