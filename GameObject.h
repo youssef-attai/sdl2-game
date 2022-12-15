@@ -5,8 +5,7 @@
 
 class GameObject {
 public:
-    GameObject(const char *_textureFilename, SDL_Renderer *_renderer, int _x, int _y, int _width,
-               int _height);
+    GameObject(const char *_textureFilename, int _x, int _y, int _width, int _height);
 
     ~GameObject();
 
@@ -20,7 +19,6 @@ private:
     int xPos, yPos;
     SDL_Texture *texture;
     SDL_Rect destRect;
-    SDL_Renderer *renderer;
 };
 
 

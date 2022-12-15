@@ -22,8 +22,8 @@ void GameObject::update() {
 void GameObject::render() {
     destRect.x = xPos;
     destRect.y = yPos;
-    
-    SDL_RenderCopy(renderer, texture, nullptr, &destRect);
+
+    SDL_RenderCopy(Game::renderer, texture, nullptr, &destRect);
 }
 
 void GameObject::destroy() {

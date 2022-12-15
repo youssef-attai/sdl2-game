@@ -2,6 +2,9 @@
 #include "utils.h"
 #include "GameObject.h"
 
+//  Initialize the game renderer
+SDL_Renderer *Game::renderer = nullptr;
+
 //  The player;
 GameObject *player;
 
@@ -44,7 +47,7 @@ void Game::init(const char *_title, int _xPos, int _yPos, int _width, int _heigh
     isRunning = true;
 
 //    Create the player texture 
-    player = new GameObject(asset("mario"), renderer, 0, 0, 32, 64);
+    player = new GameObject(asset("mario"), 0, 0, 32, 64);
 }
 
 void Game::handleEvent() {
