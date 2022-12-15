@@ -7,7 +7,7 @@ GameObject::GameObject(
         int _y,
         int _width,
         int _height
-) : texture{TextureManager::LoadTexture(_textureFilename)},
+) : texture{TextureManager::loadTexture(_textureFilename)},
     xPos{_x},
     yPos{_y},
     destRect{xPos, yPos, _width, _height} {}
