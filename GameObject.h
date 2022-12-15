@@ -1,7 +1,3 @@
-//
-// Created by youssef on 12/15/22.
-//
-
 #ifndef INC_2D_GAME_SDL2_GAMEOBJECT_H
 #define INC_2D_GAME_SDL2_GAMEOBJECT_H
 
@@ -13,9 +9,9 @@ public:
                int _height);
 
     ~GameObject();
-    
+
     void update();
-    
+
     void render();
 
     void destroy();

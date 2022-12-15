@@ -1,20 +1,18 @@
 #include "GameObject.h"
 #include "TextureManager.h"
 
-GameObject::GameObject(const char *_textureFilename, SDL_Renderer *_renderer, int _x, int _y, int _width,
-                       int _height) {
-    renderer = _renderer;
-    texture = TextureManager::LoadTexture(_textureFilename, renderer);
+GameObject::GameObject(
+        const char *_textureFilename,
+        int _x,
+        int _y,
+        int _width,
+        int _height
+) : texture{TextureManager::LoadTexture(_textureFilename)},
+    xPos{_x},
+    yPos{_y},
+    destRect{xPos, yPos, _width, _height} {}
 
-    xPos = _x;
-    yPos = _y;
-    destRect.w = _width;
-    destRect.h = _height;
-}
-
-GameObject::~GameObject() {
-
-}
+GameObject::~GameObject() = default;
 
 void GameObject::update() {
     xPos++;

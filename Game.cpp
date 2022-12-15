@@ -5,13 +5,9 @@
 //  The player;
 GameObject *player;
 
-Game::Game() {
+Game::Game() {}
 
-}
-
-Game::~Game() {
-
-}
+Game::~Game() {}
 
 void Game::init(const char *_title, int _xPos, int _yPos, int _width, int _height) {
 //    Initialize all SDL subsystems
