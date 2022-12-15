@@ -23,7 +23,7 @@ void GameObject::render() {
     destRect.x = xPos;
     destRect.y = yPos;
 
-    SDL_RenderCopy(Game::renderer, texture, nullptr, &destRect);
+    TextureManager::drawTexture(texture, destRect);
 }
 
 void GameObject::destroy() {
