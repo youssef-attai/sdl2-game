@@ -1,6 +1,4 @@
-#ifndef INC_2D_GAME_SDL2_TEXTUREMANAGER_H
-#define INC_2D_GAME_SDL2_TEXTUREMANAGER_H
-
+#pragma once
 #include "Game.h"
 
 class TextureManager {
@@ -9,6 +7,3 @@ public:
 
     static void drawTexture(SDL_Texture *_texture, SDL_Rect destRect);
 };
-
-
-#endif //INC_2D_GAME_SDL2_TEXTUREMANAGER_H

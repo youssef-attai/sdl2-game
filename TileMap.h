@@ -1,5 +1,4 @@
-#ifndef INC_2D_GAME_SDL2_TILEMAP_H
-#define INC_2D_GAME_SDL2_TILEMAP_H
+#pragma once
 
 #include "Game.h"
 
@@ -18,6 +17,3 @@ private:
     SDL_Texture *water, *dirt, *grass;
     int map[20][25];
 };
-
-
-#endif //INC_2D_GAME_SDL2_TILEMAP_H

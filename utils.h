@@ -1,5 +1,4 @@
-#ifndef INC_2D_GAME_SDL2_UTILS_H
-#define INC_2D_GAME_SDL2_UTILS_H
+#pragma once
 
 #include <cstring>
 
@@ -14,5 +13,3 @@ inline const char *asset(const char *_filename) {
     strcat(filename, extension);
     return filename;
 }
-
-#endif //INC_2D_GAME_SDL2_UTILS_H

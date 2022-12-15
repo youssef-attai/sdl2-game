@@ -1,5 +1,4 @@
-#ifndef INC_2D_GAME_SDL2_GAMEOBJECT_H
-#define INC_2D_GAME_SDL2_GAMEOBJECT_H
+#pragma once
 
 #include "Game.h"
 
@@ -20,6 +19,3 @@ private:
     SDL_Texture *texture;
     SDL_Rect destRect;
 };
-
-
-#endif //INC_2D_GAME_SDL2_GAMEOBJECT_H
