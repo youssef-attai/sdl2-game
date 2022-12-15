@@ -12,3 +12,7 @@ SDL_Texture *TextureManager::LoadTexture(const char *filename) {
     
     return texture;
 }
+
+void TextureManager::drawTexture(SDL_Texture *_texture, SDL_Rect destRect) {
+    SDL_RenderCopy(Game::renderer, _texture, nullptr, &destRect);
+}
