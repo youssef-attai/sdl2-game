@@ -1,12 +1,16 @@
 #include "Game.h"
 #include "utils.h"
 #include "GameObject.h"
+#include "TileMap.h"
 
 //  Initialize the game renderer
 SDL_Renderer *Game::renderer = nullptr;
 
 //  The player;
 GameObject *player;
+
+//  The map
+TileMap *map;
 
 Game::Game() : isRunning{false}, window{nullptr} {}
 
@@ -46,7 +50,10 @@ void Game::init(const char *_title, int _xPos, int _yPos, int _width, int _heigh
     isRunning = true;
 
 //    Create the player texture 
-    player = new GameObject(asset("mario"), 0, 0, 32, 64);
+    player = new GameObject(asset("youssef"), 0, 0, 32, 64);
+
+//    Create the map
+    map = new TileMap();
 }
 
 void Game::handleEvent() {
@@ -72,6 +79,7 @@ void Game::update() {
 
 void Game::render() {
     SDL_RenderClear(renderer);
+    map->drawMap();
     player->render();
     SDL_RenderPresent(renderer);
 }
