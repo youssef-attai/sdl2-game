@@ -88,7 +88,7 @@ void Game::clean() {
 //    Free all allocated memory, destroy all objects
     SDL_DestroyWindow(window);
     SDL_DestroyRenderer(renderer);
-    player->destroy();
+//    player->destroy();
     SDL_Quit();
 
     std::cout << "Game cleaned" << '\n';
