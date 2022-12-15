@@ -8,9 +8,9 @@ SDL_Renderer *Game::renderer = nullptr;
 //  The player;
 GameObject *player;
 
-Game::Game() {}
+Game::Game() : isRunning{false}, window{nullptr} {}
 
-Game::~Game() {}
+Game::~Game() = default;
 
 void Game::init(const char *_title, int _xPos, int _yPos, int _width, int _height) {
 //    Initialize all SDL subsystems
