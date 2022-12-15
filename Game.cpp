@@ -42,7 +42,6 @@ void Game::init(const char *_title, int _xPos, int _yPos, int _width, int _heigh
         SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
     }
 
-
 //    Set the game running state to "running"
     isRunning = true;
 
